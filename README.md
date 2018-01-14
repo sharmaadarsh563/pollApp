@@ -12,13 +12,16 @@ pollApp
 
 	git clone https://github.com/sharmaadarsh563/pollApp.git pollApp
 
-## Virtual Envirnoment and requirements
+## Create Virtual Envirnoment
 
 	virtualenv env
 	source env/bin/activate
+
+## Install Project Requirements
+
 	pip install -r requirements.txt
 
-## Postgres setup
+## Setup Postgres
 
     sudo apt-get install postgresql
 	pip install psycopg2
@@ -33,11 +36,11 @@ pollApp
 	\q
 	psql -d pollApp_db -U your-username
 
-## Create a superuser account.
+## Create a superuser
 
 	python manage.py createsuperuser
 
-## Running Development Server
+## Run the Development Server
 
 	python manage.py runserver
 
