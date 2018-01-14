@@ -23,8 +23,7 @@ pollApp
 
 ## Setup Postgres
 
-    sudo apt-get install postgresql
-	pip install psycopg2
+	sudo apt-get install postgresql
 	sudo su postgres
 	psql -d template1 -U postgres
 	CREATE USER your-username WITH PASSWORD your-password;
@@ -35,6 +34,23 @@ pollApp
 	\i path-to-psql-dump-data
 	\q
 	psql -d pollApp_db -U your-username
+
+## Setup Redis
+
+	sudo apt-get install postgresql
+	sudo apt-get install build-essential
+	sudo apt-get install tcl8.5
+	wget http://download.redis.io/releases/redis-2.8.3.tar.gz
+	tar -xvzf redis-2.8.3.tar.gz && cd redis-2.8.3
+	make
+	make test
+	sudo make install
+	cd utils
+	sudo ./install_server.sh
+	sudo service redis_6379 start
+	sudo service redis_6379 stop
+	redis-cli
+	sudo systemctl enable redis_6379.service
 
 ## Create a superuser
 
